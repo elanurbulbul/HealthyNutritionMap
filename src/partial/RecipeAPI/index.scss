@@ -1,0 +1,22 @@
+.search-bar{
+    margin: auto;
+    .recipe-search-input{
+        padding: 5px;
+        border-radius: 5px;
+        width: 50%;
+        margin-right: 20px;
+        
+    }
+    .recipe-search-button{
+        padding: 5px 30px;
+        border-radius: 5px;
+        background: #c9a2a2;
+    }
+}
+.recipe-list-container{
+    background: #c9a2a2;
+}
+.recipe-card-btn{
+    background: #c9a2a2;
+    color: white;
+}

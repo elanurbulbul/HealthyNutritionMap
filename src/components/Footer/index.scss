@@ -1,0 +1,16 @@
+.footer-nav{
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    .footer-list{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        .footer-nav-link{
+            color: white;
+            font-size: 18px;
+        }
+    }
+}

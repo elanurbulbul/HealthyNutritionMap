@@ -1,0 +1,51 @@
+.hero-section {
+  text-align: center;
+  .hero-section-title {
+    display: flex;
+    font-weight: 500;
+    max-width: 800px;
+    margin: 30px auto;
+    margin-bottom: 80px;
+    h1 {
+      font-size: 68px;
+    }
+  }
+  
+  .hero-card {
+    
+    border-radius: 30px;
+    .hero-card-img {
+      width: 100%;
+      opacity: 75%;
+      border-radius: 30px;
+    }
+    .hero-card-ImgOverlay{
+      .hero-card-title{
+        font-weight: 500;
+        font-size: 64px;
+        max-width: 802px;
+        margin: auto;
+  
+      }
+    }
+    
+  }
+}
+.content-section{
+  background: #f0e9e9;
+  .content-section-description {
+    border-radius: 30px;
+    padding:40px 0;
+    margin: 20px auto;
+    font-weight: 400;
+    font-size: 24px;
+   
+  
+  }
+}
+
+.search-section {
+  .search-title {
+    font-size: 20px;
+  }
+}

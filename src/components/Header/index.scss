@@ -1,0 +1,17 @@
+.navbar-list {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  .navbar-list-item {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    &:hover {
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+    }
+  }
+}
+.navbar-brand {
+  font-weight: 600;
+  font-size: 23px;
+}

@@ -1,0 +1,12 @@
+$theme-colors: (
+  'info': tomato,
+  'danger': rgb(65, 81, 81)
+);
+
+/* import bootstrap to set changes */
+@import '~bootstrap/scss/bootstrap';
+
+section{
+  padding: 50px 0;
+  margin: 25px 0;
+}
