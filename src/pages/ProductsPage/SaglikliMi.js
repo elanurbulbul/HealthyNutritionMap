@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import * as onnx from "onnxjs";
 import Loading from "../../components/Loading";
-//const onnxFolder = require("../../model/best.onnx");
+const onnxFolder = require("../../model/best.onnx");
 
 
 function SaglikliMi() {
@@ -18,11 +18,11 @@ function SaglikliMi() {
       console.log("infer2");
       const sess = await new onnx.InferenceSession();
       console.log("startin");
-      //const loadedModel = await sess.loadModel("./model/best.onnx");
+      const loadedModel = await sess.loadModel("../../model/best.onnx");
       console.log("sess load");
       setModel(loadedModel);
     }
-   //  loadModel();
+     loadModel();
   }, []);
 
   // Görüntü işleme ve tahmin yapma
