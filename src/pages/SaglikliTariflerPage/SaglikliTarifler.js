@@ -31,7 +31,7 @@ const SaglikliTarifler = () => {
               src={heroImg}
               alt="Card image"
             />
-            <Card.ImgOverlay className="hero-card-ImgOverlay d-flex flex-column">
+            <Card.ImgOverlay className="hero-card-ImgOverlay d-flex flex-column justify-content-center  align-items-center ">
               <Card.Title className="hero-card-title">
                 Check here for the healthy recipes you are looking for..
               </Card.Title>

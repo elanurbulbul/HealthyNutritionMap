@@ -1,3 +1,46 @@
-// .hero-section{
-//     // background: #e7e1e1;
-// }
+.HomePage {
+  .hero-section {
+    padding: 0 20px;
+    background-color: rgb(199, 231, 183);
+  }
+
+  .content-section {
+    .content-section-title {
+      font-size: 40px;
+    }
+    .content-section-text{
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .content-section-list {
+      .content-section-list-item {
+        padding: 20px 10px;
+      }
+      p {
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .testimonials-section{
+    background-color: rgb(199, 231, 183);
+    .testimonials-section-passage{
+      padding: 40px 0;
+      .testimonials-section-img{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .testimonials-section-description{
+        font-weight: 600;
+      }
+    }
+    }
+    
+    
+}

@@ -15,7 +15,7 @@ function AlignmentExample() {
     <footer>
       <Nav className="footer-nav" activeKey="/home"
       >
-        <div className=" footer-list">
+        <div className=" footer-list list-page mb-4">
         {pages.map((page) => (
           <Nav.Item key={page.id} onClick={handleChange}>     
             <Nav.Link  href={page.link} className="footer-nav-link">
@@ -25,7 +25,7 @@ function AlignmentExample() {
         ))}
         </div>
         
-        <div className="footer-list">
+        <div className="footer-list list-socialmedia">
         {socialMedia.map((page) => (
           <Nav.Item key={page.id} onClick={handleChange}>
             <Nav.Link 

@@ -1,15 +1,9 @@
-.hero-section {
+.HealthyRecipesPage{
+  
   text-align: center;
-  .hero-section-title {
-    display: flex;
-    font-weight: 500;
-    max-width: 800px;
-    margin: 30px auto;
-    margin-bottom: 80px;
-    h1 {
-      font-size: 68px;
-    }
-  }
+  .hero-section {
+    background-color: white;
+  
   
   .hero-card {
     
@@ -21,11 +15,10 @@
     }
     .hero-card-ImgOverlay{
       .hero-card-title{
-        font-weight: 500;
-        font-size: 64px;
+        font-weight: 600;
+        font-size: 58px;
         max-width: 802px;
-        margin: auto;
-  
+        
       }
     }
     
@@ -48,4 +41,5 @@
   .search-title {
     font-size: 20px;
   }
+}
 }
