@@ -4,6 +4,7 @@ import RecipeApi from "../../partial/RecipeAPI/RecipesApi";
 import "./index.scss";
 import Card from "react-bootstrap/Card";
 import heroImg from "../../img/HealthyRecipes/hero-section-recipes-img.png";
+import { Container } from "react-bootstrap";
 
 const app_id = "cfa79e41"; // Replace with your Edamam API app_id
 const app_key = "c5f776242e38ea968b3fac48d712da1e"; // Replace with your Edamam API app_key
@@ -24,7 +25,7 @@ const SaglikliTarifler = () => {
       {loading && <Loading />}
 
       <section className="hero-section">
-        <div className="container">
+        <Container>
           <Card className="hero-card ">
             <Card.Img
               className="hero-card-img"
@@ -32,21 +33,24 @@ const SaglikliTarifler = () => {
               alt="Card image"
             />
             <Card.ImgOverlay className="hero-card-ImgOverlay d-flex flex-column justify-content-center  align-items-center ">
-              <Card.Title className="hero-card-title">
+              <Card.Title className="hero-card-title fs-1 ">
                 Check here for the healthy recipes you are looking for..
               </Card.Title>
             </Card.ImgOverlay>
           </Card>
+        </Container>
+      </section>
+      <section className="content-section">
+        <div className="container ">
+          <div className="content-section-description ">
+            Eating healthy at home is important to protect our physical and
+            mental health. However, busy life pace and work stress can sometimes
+            make it difficult to have a balanced diet. Fortunately, there are
+            practical ways to eat healthy at home. On this web page, we will
+            help you live a balanced and nutritious life by sharing some
+            practical suggestions for healthy nutrition at home.
           </div>
-          </section>
-          <section className="content-section">
-            <div className="container ">
-            <div className="content-section-description ">
-          Eating healthy at home is important to protect our physical and mental health. However, busy life pace and work stress can sometimes make it difficult to have a balanced diet. Fortunately, there are practical ways to eat healthy at home. On this web page, we will help you live a balanced and nutritious life by sharing some practical suggestions for healthy nutrition at home.
-          </div>
-            </div>
-
-        
+        </div>
       </section>
       <section className="search-section">
         <div className="container">
