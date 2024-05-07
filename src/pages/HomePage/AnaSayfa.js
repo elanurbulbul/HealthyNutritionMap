@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
 import { Container, Row, Col } from "react-bootstrap";
-import heroSectionImg from "../../img/HomePage/hero-section-img.jpeg";
+import heroSectionImg from "../../img/HomePage/homePage_hero-section-img.jpeg";
 import "./index.scss";
 import list1 from "../../img/HomePage/list1.jpg";
 import list2 from "../../img/HomePage/list2.jpg";
 import list3 from "../../img/HomePage/list3.jpg";
 import list4 from "../../img/HomePage/list4.jpg";
-import logo from "../../img/HomePage/logo.jpg";
+import healthyEating from "../../img/HomePage/healthyEating.jpg";
 
 
 const Anasayfa = () => {
@@ -30,13 +30,13 @@ const Anasayfa = () => {
               lg={6}
               className="d-flex align-items-center justify-content-center mb-lg-0 mb-5"
             >
-              <a href="#">
+              
                 <img
                   src={heroSectionImg}
                   alt="heroSection_img"
                   className="img-fluid rounded-3 "
                 />
-              </a>
+            
             </Col>
           </Row>
         </Container>
@@ -184,11 +184,11 @@ const Anasayfa = () => {
         </Container>
       </section>
 
-       <section className="logoClouds-section py-5">
+       <section className="visual-section">
         <Container>
         <Row>
           <Col>
-            <img src={logo} alt="logoClouds" className="w-100 "/>
+            <img src={healthyEating} alt="Healthy Eaiting Plate" className="w-100 "/>
           </Col>
         </Row>
         </Container>

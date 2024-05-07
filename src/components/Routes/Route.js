@@ -9,7 +9,8 @@ import RecipeDetail from "../../pages/SaglikliTariflerPage/RecipeDetailPage";
 const RoutePage = () => {
   return (
     <Routes>
-      <Route path="/anasayfa" exact element={<Anasayfa />} />
+      <Route path="/" exact element={<Anasayfa/>} />
+      <Route path="/anasayfa"  element={<Anasayfa />} />
       <Route path="/hakkimizda" element={<Hakkimizda />} />
       <Route path="/saglikliMi" element={<SaglikliMi />} />
       <Route path="/saglikliTarifler" element={<SaglikliTarifler />} />

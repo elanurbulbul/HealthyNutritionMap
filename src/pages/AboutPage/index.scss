@@ -1,0 +1,23 @@
+.AboutPage{
+    .hero-section{
+        text-align: start;
+        .hero-section-description{
+            font-family:monospace;
+            line-height: 20px;
+            .hero-section-title{
+                
+                font-size: 40px;
+                font-weight: 700;
+            }
+            .hero-section-text{
+                font-size: 20px;
+            }
+        }
+        
+    }
+    .stats-section{
+        background: #f0e9e9;
+        text-align: start;
+    }
+    
+}

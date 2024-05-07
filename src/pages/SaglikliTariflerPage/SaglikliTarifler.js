@@ -41,16 +41,16 @@ const SaglikliTarifler = () => {
         </Container>
       </section>
       <section className="content-section">
-        <div className="container ">
-          <div className="content-section-description ">
+        <Container>
+          <p className="content-section-description ">
             Eating healthy at home is important to protect our physical and
             mental health. However, busy life pace and work stress can sometimes
             make it difficult to have a balanced diet. Fortunately, there are
             practical ways to eat healthy at home. On this web page, we will
             help you live a balanced and nutritious life by sharing some
             practical suggestions for healthy nutrition at home.
-          </div>
-        </div>
+          </p>
+        </Container>
       </section>
       <section className="search-section">
         <div className="container">
