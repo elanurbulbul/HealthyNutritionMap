@@ -2,11 +2,12 @@
   .hero-section {
     text-align: start;
     .hero-section-description {
-      font-family: monospace;
+      font-family:cursive;
       line-height: 20px;
       .hero-section-title {
         font-size: 40px;
         font-weight: 700;
+        margin-bottom: 30px;
       }
       .hero-section-text {
         font-size: 20px;
@@ -16,6 +17,10 @@
   .stats-section {
     background: #f0e9e9;
     text-align: start;
+    .stats-section-title{
+      font-size: 40px;
+      font-weight: 600;
+    }
     .stats-formation {
     
       text-align: center;
@@ -26,6 +31,22 @@
       }
       .stats-formation-name {
         font-size: 1.0rem;
+      }
+    }
+  }
+  .team-section{
+    
+    .team-section-description{
+      text-align: start;
+      border-left: 2px dotted gray ;
+      margin:10px 0;
+      .team-section-img{
+        margin-left: 15px;
+      }
+      .team-section-title{
+        margin-bottom: 5px;
+        font-size: 25px;
+        font-weight: 600;
       }
     }
   }

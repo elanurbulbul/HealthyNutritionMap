@@ -4,6 +4,7 @@ import Loading from "../../components/Loading/index";
 import { Container, Row, Col } from "react-bootstrap";
 import "./index.scss";
 import healthyNutrition from "../../img/AboutPage/abotPageHealthyNutrition.jpg";
+import personEla from "../../img/AboutPage/personEla.jpeg";
 
 const Hakkimizda = () => {
   const [loading, setLoading] = useState(false);
@@ -29,8 +30,8 @@ const Hakkimizda = () => {
                 className="w-100 "
               />
             </Col>
-            <Col lg={4} className="align-self-center ">
-              <div className="hero-section-description">
+            <Col lg={4} className="align-self-end ">
+              <div className="hero-section-description ">
                 <h2 className="hero-section-title">
                   Now it's your turn to eating healthy...
                 </h2>
@@ -49,11 +50,10 @@ const Hakkimizda = () => {
       <section className="stats-section">
         <Container>
           <Row>
-            <Col lg={8} sm={12}>
-              <h3 className="mb-3 ">Mission and Vision</h3>
+            <Col lg={8} sm={12} className="align-self-center ">
+              <h3 className="stats-section-title mb-3 ">Mission and Vision</h3>
               <div className="stats-section-description">
                 <p>
-                  {" "}
                   Our mission is to educate individuals on conscious and
                   accurate nutrition habits, emphasize the importance of
                   high-nutrient, natural, and fresh foods, and encourage a
@@ -78,20 +78,48 @@ const Hakkimizda = () => {
               </div>
             </Col>
             <Col lg={4} sm={12}>
-              
-                
-                  <Row  className="stats-formation d-md-flex justify-content-bet  " >
-                    {stats.map((stat) => (
-                      <Col key={stat.id} lg={12} md={4} className="mx-auto  py-3">
-                        <div>
-                          <p className="stats-formation-value">{stat.value}</p>
-                          <p className="stats-formation-name">{stat.name}</p>
-                        </div>
-                      </Col>
-                    ))}
-                  </Row>
-              
-              
+              <Row className="stats-formation d-md-flex justify-content-bet  ">
+                {stats.map((stat) => (
+                  <Col key={stat.id} lg={12} md={4} className="mx-auto  py-3">
+                    <div>
+                      <p className="stats-formation-value">{stat.value}</p>
+                      <p className="stats-formation-name">{stat.name}</p>
+                    </div>
+                  </Col>
+                ))}
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section className="team-section">
+        <Container>
+          <Row>
+            <Col  md={6} sm={12} >
+              <div className="team-section-description d-flex align-items-center ">
+                <img
+                  className=" team-section-img w-25 h-25 rounded-circle me-3 "
+                  src={personEla}
+                  alt="Elanur Bülbül"
+                />
+                <div className="team-section-information ">
+                  <h3 className="team-section-title ">Elanur Bülbül</h3>
+                  <p className="team-section-role">FrontEnd Developer</p>
+                </div>
+              </div>
+            </Col>
+            <Col md={6} sm={12}>
+              <div className="team-section-description d-flex align-items-center text-start ">
+                <img
+                  className="team-section-img w-25 h-25 rounded-circle me-3 "
+                  src={personEla}
+                  alt="Şule Aktaş"
+                />
+                <div className="team-section-information">
+                  <h3 className="team-section-title">Şule Aktaş</h3>
+                  <p className="team-section-role">asas</p>
+                </div>
+              </div>
             </Col>
           </Row>
         </Container>
