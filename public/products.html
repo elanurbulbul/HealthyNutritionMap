@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bisküvi</title>
+    <style>
+      .main {
+        margin: 50px auto 0 auto;
+        text-align: center;
+      }
+      video {
+        display: none;
+      }
+      canvas {
+        box-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.5);
+      }
+      .btn-stop {
+        margin: 20px;
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <video id="video"></video>
+      <canvas height="640" width="640" id="input-canvas"></canvas>
+      <br />
+      <input type="button" value="Durdur" id="btnStop" class="btn-stop" />
+    </div>
+    <script>
+      const canvas = document.getElementById("input-canvas");
+      const btnStop = document.getElementById("btnStop");
+      const context = canvas.getContext("2d");
+      const video = document.getElementById("video");
+      let crop, raf;
+      let enableDetect = true;
+      let lastDetection = null;
+
+      async function sendImage() {
+        const imageData = canvas.toDataURL("image/jpg");
+        const response = await fetch("http://127.0.0.1:8080/detect", {
+          method: "post",
+          body: imageData,
+        });
+        const responseJSON = await response.json();
+        return responseJSON;
+      }
+
+      async function loop() {
+        context.drawImage(video, crop.x, crop.y, crop.w, crop.h);
+        if (lastDetection) {
+          // bounding box
+          context.beginPath();
+          context.lineWidth = "3";
+          context.strokeStyle = "#db03fc";
+          context.rect(
+            lastDetection.x,
+            lastDetection.y,
+            lastDetection.width,
+            lastDetection.height,
+          );
+          // class text
+          context.fillStyle = "#db03fc";
+          context.font = "22px serif";
+          context.fillText(
+            lastDetection.class_name,
+            lastDetection.x + 10,
+            lastDetection.y + 22,
+          );
+          context.stroke();
+        }
+        if (!enableDetect) {
+          cancelAnimationFrame(raf);
+          return;
+        }
+        try {
+          const detections = await sendImage();
+          for (const detection of detections) {
+            const { class_name, confidence, xyxy } = detection;
+            if (confidence.length && confidence[0] > 0.5) {
+              // let ratio = 640 / 800;
+              let ratio = 800 / 800;
+              let first_confidence = confidence[0];
+              let firstCoords = xyxy[0];
+              let x = parseInt(firstCoords[0] * ratio);
+              let y = parseInt(firstCoords[1] * ratio);
+              let width = parseInt((firstCoords[2] - firstCoords[0]) * ratio);
+              let height = parseInt((firstCoords[3] - firstCoords[1]) * ratio);
+
+              //   console.log("class name:", class_name);
+              //   console.log("conf:", first_confidence);
+              //   console.log("xyxy:", x, y, width, height);
+              lastDetection = {
+                x: x,
+                y: y,
+                width: width,
+                height: height,
+                class_name: class_name,
+                confidence: first_confidence,
+              };
+            } else {
+              lastDetection = null;
+            }
+          }
+          //cancelAnimationFrame(raf);
+          //return;
+        } catch (e) {
+          console.log(e);
+        }
+        raf = requestAnimationFrame(loop);
+      }
+
+      function calculateSize(srcSize, dstSize) {
+        const srcRatio = srcSize.width / srcSize.height;
+        const dstRatio = dstSize.width / dstSize.height;
+        if (dstRatio < srcRatio) {
+          return {
+            width: dstSize.height * srcRatio,
+            height: dstSize.height,
+          };
+        } else {
+          return {
+            width: dstSize.width,
+            height: dstSize.width / srcRatio,
+          };
+        }
+      }
+
+      function startWebcam() {
+        navigator.getUserMedia =
+          navigator.getUserMedia ||
+          navigator.webkitGetUserMedia ||
+          navigator.mozGetUserMedia;
+
+        navigator.getUserMedia(
+          { video: true },
+          (stream) => {
+            video.srcObject = stream;
+            video.onplaying = function () {
+              const videoSize = {
+                width: video.videoWidth,
+                height: video.videoHeight,
+              };
+              const canvasSize = {
+                width: canvas.scrollWidth,
+                height: canvas.scrollHeight,
+              };
+              const renderSize = calculateSize(videoSize, canvasSize);
+              const xOffset = parseInt(
+                (canvasSize.width - renderSize.width) / 2,
+              );
+              crop = {
+                w: parseInt(renderSize.width),
+                h: parseInt(renderSize.height),
+                x: xOffset,
+                y: 0,
+              };
+              raf = requestAnimationFrame(loop);
+            };
+
+            video.play();
+          },
+          (error) => {
+            console.error("Web cam hatası:", error);
+          },
+        );
+      }
+
+      // uygulama başlatma
+      startWebcam();
+
+      btnStop.addEventListener("click", () => {
+        console.log("Stopped inference!");
+        cancelAnimationFrame(raf);
+        enableDetect = false;
+      });
+    </script>
+  </body>
+</html>
