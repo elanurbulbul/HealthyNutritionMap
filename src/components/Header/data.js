@@ -7,7 +7,7 @@ export const pages = [
     {
       id:2,
       text:"Hakkımızda",
-      link:"/hakkimizda"
+      link:"/about"
     },
     {
       id:3,
