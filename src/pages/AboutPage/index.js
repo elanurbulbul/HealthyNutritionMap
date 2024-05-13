@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import "./index.scss";
 import healthyNutrition from "../../img/AboutPage/abotPageHealthyNutrition.jpg";
 import personEla from "../../img/AboutPage/personEla.jpeg";
+import personSule from "../../img/AboutPage/personSule.jpg"
 
 const Hakkimizda = () => {
   const [loading, setLoading] = useState(false);
@@ -36,7 +37,7 @@ const Hakkimizda = () => {
                   Now it's your turn to eating healthy...
                 </h2>
                 <p className="hero-section-text">
-                  We, as Healthy Nutrition Compass, aim to assist individuals in
+                  We, as Healthy Nutrition Map, aim to assist individuals in
                   adopting and maintaining a healthy lifestyle. Our goal is to
                   promote healthy eating habits and increase awareness of
                   healthy living within the community.
@@ -70,7 +71,7 @@ const Hakkimizda = () => {
                   and more energetic community.
                 </p>
                 <p>
-                  As Healthy Nutrition Compass, we will continue to guide and
+                  As Healthy Nutrition Map, we will continue to guide and
                   support individuals in adopting a healthy lifestyle according
                   to this vision. We strive to contribute to everyone acquiring
                   conscious eating habits for a healthier future.
@@ -96,7 +97,7 @@ const Hakkimizda = () => {
         <Container>
           <Row>
             <Col  md={6} sm={12} >
-              <div className="team-section-description d-flex align-items-center ">
+              <div className="team-section-description d-flex align-items-center  text-start  ">
                 <img
                   className=" team-section-img w-25 h-25 rounded-circle me-3 "
                   src={personEla}
@@ -112,12 +113,12 @@ const Hakkimizda = () => {
               <div className="team-section-description d-flex align-items-center text-start ">
                 <img
                   className="team-section-img w-25 h-25 rounded-circle me-3 "
-                  src={personEla}
+                  src={personSule}
                   alt="Şule Aktaş"
                 />
                 <div className="team-section-information">
                   <h3 className="team-section-title">Şule Aktaş</h3>
-                  <p className="team-section-role">asas</p>
+                  <p className="team-section-role">AI</p>
                 </div>
               </div>
             </Col>
