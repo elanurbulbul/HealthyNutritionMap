@@ -1,19 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Anasayfa from "../../pages/HomePage/AnaSayfa";
-import AboutPage from "../../pages/AboutPage/AboutPage";
-import SaglikliMi from "../../pages/ProductsPage/SaglikliMi";
-import SaglikliTarifler from "../../pages/SaglikliTariflerPage/SaglikliTarifler";
-import RecipeDetail from "../../pages/SaglikliTariflerPage/RecipeDetailPage";
+import HomePage from "../../pages/HomePage";
+import AboutPage from "../../pages/AboutPage";
+import IsitHealthy from "../../pages/IsitHealthyPage";
+import HealthyRecipes from "../../pages/HealthyRecipesPage";
+import RecipeDetail from "../../pages/HealthyRecipesPage/RecipeDetailPage";
 
 const RoutePage = () => {
   return (
     <Routes>
-      <Route path="/" exact element={<Anasayfa/>} />
-      <Route path="/anasayfa"  element={<Anasayfa />} />
+      <Route path="/" exact element={<HomePage/>} />
+      <Route path="/homepage"  element={<HomePage />} />
       <Route path="/about" element={<AboutPage />} />
-      <Route path="/saglikliMi" element={<SaglikliMi />} />
-      <Route path="/saglikliTarifler" element={<SaglikliTarifler />} />
+      <Route path="/isitHealthy" element={<IsitHealthy />} />
+      <Route path="/healthyrecipes" element={<HealthyRecipes />} />
       <Route path='recipe/:id' element={<RecipeDetail />} /> 
     </Routes>
   );

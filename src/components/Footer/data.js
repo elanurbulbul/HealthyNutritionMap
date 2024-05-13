@@ -1,23 +1,23 @@
 export const pages = [
   {
     id: 1,
-    text: "Ana Sayfa",
-    link: "/anasayfa",
+    text: "Home Page",
+    link: "/homepage",
   },
   {
     id: 2,
-    text: "Hakkımızda",
-    link: "/hakkimizda",
+    text: "About",
+    link: "/about",
   },
   {
     id: 3,
-    text: "Sağlıklı Mı?",
-    link: "/saglikliMi",
+    text: "Is it Healthy?",
+    link: "/isitHealthy",
   },
   {
     id: 4,
-    text: "Sağlıklı Tarifler",
-    link: "/saglikliTarifler",
+    text: "Healthy Recipes",
+    link: "/healthyrecipes",
   },
 ];
 export const socialMedia = [
