@@ -10,7 +10,7 @@ import list4 from "../../img/HomePage/list4.jpg";
 import healthyEating from "../../img/HomePage/healthyEating.jpg";
 
 
-const Anasayfa = () => {
+const Homepage = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -45,8 +45,9 @@ const Anasayfa = () => {
       <section className="content-section py-5">
         <Container>
           <Row mt={4}>
-            <Col lg={6} className="align-self-center">
-              <h3 className="content-section-title">
+            
+            <Col lg={12}>
+            <h3 className="content-section-title">
                 What is healthy nutrition?
               </h3>
               <p className="content-section-text">
@@ -61,22 +62,20 @@ const Anasayfa = () => {
                 This approach supports overall health, increases energy levels
                 and contributes to long-term health outcomes.
               </p>
-            </Col>
-            <Col lg={6}>
               <Row className="content-section-list">
-                <Col lg={6} md={6} sm={6} className="content-section-list-item">
+                <Col lg={3} md={6} className="content-section-list-item">
                   <p>Balanced and Varied Nutrition</p>
                   <img src={list1} alt="Balanced and Varied Nutrition" />
                 </Col>
-                <Col lg={6} md={6} sm={6} className="content-section-list-item">
+                <Col lg={3} md={6} className="content-section-list-item">
                   <p>Fresh and Natural Foods</p>
                   <img src={list2} alt="Fresh and Natural Foods" />
                 </Col>
-                <Col lg={6} md={6} sm={6} className="content-section-list-item">
+                <Col lg={3} md={6} className="content-section-list-item">
                   <p>Regular Exercise and Hydration</p>
                   <img src={list3} alt="Regular Exercise and Hydration" />
                 </Col>
-                <Col lg={6} md={6} sm={6} className="content-section-list-item">
+                <Col lg={3} md={6} className="content-section-list-item">
                   <p>Adequate Sleep and Stress Management</p>
                   <img src={list4} alt="Adequate Sleep and Stress Management" />
                 </Col>
@@ -197,4 +196,4 @@ const Anasayfa = () => {
     </div>
   );
 };
-export default Anasayfa;
+export default Homepage;
