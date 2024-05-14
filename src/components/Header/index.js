@@ -6,7 +6,7 @@ import { pages } from './data';
 import './index.scss';
 
 
-function BasicExample() {
+function Header() {
  
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -32,4 +32,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default Header;

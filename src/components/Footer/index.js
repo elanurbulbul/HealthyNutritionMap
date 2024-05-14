@@ -5,7 +5,7 @@ import { socialMedia } from "./data";
 import './index.scss';
 
 
-function AlignmentExample() {
+function Footer() {
   const [value, setValue] = React.useState("recents");
 
   const handleChange = (event, newValue) => {
@@ -41,4 +41,4 @@ function AlignmentExample() {
   );
 }
 
-export default AlignmentExample;
+export default Footer;

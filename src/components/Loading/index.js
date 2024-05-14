@@ -1,6 +1,6 @@
 import Spinner from "react-bootstrap/Spinner";
 
-function BasicExample() {
+function Loading() {
   return (
     <div style={{
       height:'100vh',
@@ -24,4 +24,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default Loading;
