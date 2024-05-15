@@ -5,7 +5,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import "./index.scss";
 import healthyNutrition from "../../img/AboutPage/abotPageHealthyNutrition.jpg";
 import personEla from "../../img/AboutPage/personEla.jpeg";
-import personSule from "../../img/AboutPage/personSule.jpg"
+import personSule from "../../img/AboutPage/personSule.jpg";
+import { Helmet } from "react-helmet"
 
 const Hakkimizda = () => {
   const [loading, setLoading] = useState(false);
@@ -14,9 +15,13 @@ const Hakkimizda = () => {
     { id: 2, name: "Assets under holding", value: "$1 trillion" },
     { id: 3, name: "New users annually", value: "7,000" },
   ];
+  
 
   return (
     <div className="AboutPage">
+      <Helmet>
+        <title>About</title>
+      </Helmet>
       {loading && <Loading />}
       <section className="hero-section">
         <Container>

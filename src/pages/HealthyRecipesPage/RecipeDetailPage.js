@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
 import DetailAPI from "../../partial/RecipeAPI/DetailApi"; // Import the newly created component
 import { AiFillPushpin } from "react-icons/ai";
+import { Helmet } from "react-helmet";
 
 const app_id = "cfa79e41"; // Replace with your Edamam API app_id
 const app_key = "c5f776242e38ea968b3fac48d712da1e"; // Replace with your Edamam API app_key
@@ -29,6 +30,9 @@ const RecipeDetail = () => {
         <Loading />
       ) : recipeDetail ? (
         <div>
+          <Helmet>
+            <title>{recipeDetail.label}</title>
+          </Helmet>
           <h2>{recipeDetail.label}</h2>
           <img src={recipeDetail.image} alt={recipeDetail.label} />
           <p>Ingrediendts: </p>
@@ -40,10 +44,10 @@ const RecipeDetail = () => {
           ))}
 
           <p>HealthLabel:</p>
-            {recipeDetail.healthLabels.map((label, index) => {
-              return <p key={index}>{label}</p>;
-            })}
-        
+          {recipeDetail.healthLabels.map((label, index) => {
+            return <p key={index}>{label}</p>;
+          })}
+
           <p>Calory:{recipeDetail.calories}</p>
           {/* You can display other recipe details here */}
         </div>

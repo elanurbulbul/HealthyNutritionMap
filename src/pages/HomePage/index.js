@@ -8,6 +8,7 @@ import list2 from "../../img/HomePage/list2.jpg";
 import list3 from "../../img/HomePage/list3.jpg";
 import list4 from "../../img/HomePage/list4.jpg";
 import healthyEating from "../../img/HomePage/healthyEating.jpg";
+import { Helmet } from "react-helmet"
 
 
 const Homepage = () => {
@@ -18,6 +19,10 @@ const Homepage = () => {
 
   return (
     <div className="HomePage">
+      <Helmet>
+        <title>Homepage</title>
+        <meta name="description" content="homapage description"/>
+      </Helmet>
       {loading && <Loading />}
       <section className=" hero-section py-5">
         <Container>
