@@ -6,7 +6,6 @@ import "./index.scss";
 import healthyNutrition from "../../img/AboutPage/abotPageHealthyNutrition.jpg";
 import personEla from "../../img/AboutPage/personEla.jpeg";
 import personSule from "../../img/AboutPage/personSule.jpg";
-import { Helmet } from "react-helmet"
 
 const Hakkimizda = () => {
   const [loading, setLoading] = useState(false);
@@ -19,9 +18,7 @@ const Hakkimizda = () => {
 
   return (
     <div className="AboutPage">
-      <Helmet>
-        <title>About</title>
-      </Helmet>
+      
       {loading && <Loading />}
       <section className="hero-section">
         <Container>

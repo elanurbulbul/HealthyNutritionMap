@@ -5,7 +5,6 @@ import "./index.scss";
 import Card from "react-bootstrap/Card";
 import heroImg from "../../img/HealthyRecipes/hero-section-recipes-img.png";
 import { Container } from "react-bootstrap";
-import { Helmet } from "react-helmet"
 
 const app_id = "cfa79e41"; // Replace with your Edamam API app_id
 const app_key = "c5f776242e38ea968b3fac48d712da1e"; // Replace with your Edamam API app_key
@@ -23,9 +22,7 @@ const SaglikliTarifler = () => {
 
   return (
     <div className="HealthyRecipesPage">
-      <Helmet>
-        <title>Healthy Recipe</title>
-      </Helmet>
+      
       {loading && <Loading />}
 
       <section className="hero-section">
