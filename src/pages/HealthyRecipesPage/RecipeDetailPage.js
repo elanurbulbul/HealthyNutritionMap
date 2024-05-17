@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
-import DetailAPI from "../../partial/RecipeAPI/DetailApi"; // Import the newly created component
+import DetailAPI from "../../components/API/RecipeAPI/DetailApi"; // Import the newly created component
 import { AiFillPushpin } from "react-icons/ai";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet-async"
 
 const app_id = "cfa79e41"; // Replace with your Edamam API app_id
 const app_key = "c5f776242e38ea968b3fac48d712da1e"; // Replace with your Edamam API app_key
@@ -30,9 +30,9 @@ const RecipeDetail = () => {
         <Loading />
       ) : recipeDetail ? (
         <div>
-          <Helmet>
+          {/* <Helmet>
             <title>{recipeDetail.label}</title>
-          </Helmet>
+          </Helmet> */}
           <h2>{recipeDetail.label}</h2>
           <img src={recipeDetail.image} alt={recipeDetail.label} />
           <p>Ingrediendts: </p>
