@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
+import GeminiApi from "../../components/API/GeminiAPI/GeminiApi";
 
 
 function SaglikliMi() {
@@ -15,7 +16,9 @@ function SaglikliMi() {
     
       
       {loading && <Loading />}
+      
       <iframe src={productsHTMLUrl} title="Health Page" width="100%" height="1000px" />
+      <GeminiApi/>
     </div>
     
   );
