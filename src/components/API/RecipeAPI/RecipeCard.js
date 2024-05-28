@@ -6,9 +6,7 @@ import Card from "react-bootstrap/Card";
 const RecipeCard = ({ recipe }) => {
   const { image, label, cuisineType, dietLabel, mealType, uri } =
     recipe?.recipe;
-
   const id = uri?.split("#")[1];
-
   return (
     <Card className="recipe-card h-100 ">
       <Card.Img variant="top" src={image} alt={label} />
